@@ -9,6 +9,7 @@
     "drizzle-react-components": "^1.2.0",
     "eth-block-tracker-es5": "^2.3.2",
     "moment": "^2.22.2",
+    "normalize.css": "^8.0.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4",

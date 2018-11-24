@@ -12,6 +12,7 @@ class HelloDrizzle extends Component {
         <div>
           <section>
             <strong>Total Supply</strong>:{" "}
+
              <ContractData
               contract="CryptoKitties"
               method="totalSupply"
@@ -21,6 +22,7 @@ class HelloDrizzle extends Component {
 
           <section>
             <strong>Kitty Info</strong>:{" 1209787 "}
+
             <ContractData
               contract="CryptoKitties"
               method="getKitty"
