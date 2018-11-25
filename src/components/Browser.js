@@ -34,6 +34,7 @@ class Browser extends Component {
       })
   }
 
+
   render() {
     if (!this.state.showHello) {
       return <div>wait for shit to happen</div>;
@@ -54,6 +55,7 @@ class Browser extends Component {
 
 Browser.contextTypes = {
   drizzle: object,
+  drizzleStore: object,
 };
 
 export default Browser;
