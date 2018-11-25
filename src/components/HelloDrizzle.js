@@ -10,68 +10,110 @@ class HelloDrizzle extends Component {
 
     const drizzle = context.drizzle
     const contract = drizzle.contracts.CryptoKitties
-    this.dataKey = contract.methods.totalSupply.cacheCall({ from: props.accounts[0] })
+
+    this.state = {
+      dataKey: contract.methods.getKitty.cacheCall(123123),
+      kittyId: '123123',
+      kittySearch: '1',
+      totalSupply: undefined,
+    }
   }
 
-  renderTotalSupply() {
-    // const drizzle = this.context.drizzle
-    // const contract = drizzle.contracts.CryptoKitties
-    // const dataKey = contract.methods.totalSupply.cacheCall({ from: this.props.accounts[0] })
-    const dataKey = this.dataKey
+  componentDidUpdate() {
+    // if (this.props.kitties.initialized && this.state.totalSupply === undefined)
+    //   this.refreshTotalSupply()
+  }
+
+  refreshTotalSupply() {
+    const { accounts } = this.props
+    const drizzle = this.context.drizzle
+    const contract = drizzle.contracts.CryptoKitties
+    const dataKey = contract.methods.totalSupply.cacheCall({ from: accounts[0] })
     const kitties = this.props.kitties
 
     // Contract is not yet intialized.
-    if(!kitties.initialized) return '';
+    if(!kitties.initialized) return;
 
     // If the cache key we received earlier isn't in the store yet; the initial value is still being fetched.
-    if(!(dataKey in kitties['totalSupply'])) return '';
+    if(!(dataKey in kitties['totalSupply'])) return;
 
-    return kitties['totalSupply'][dataKey].value;
+    this.setState({ totalSupply: kitties['totalSupply'][dataKey].value })
   }
 
+  getKitty() {
+    const dataKey = this.state.dataKey
+    const kitties = this.props.kitties
+
+    // Contract is not yet intialized.
+    if(!kitties.initialized) return undefined;
+
+    // If the cache key we received earlier isn't in the store yet; the initial value is still being fetched.
+    if(!(dataKey in kitties['getKitty'])) return undefined;
+
+    return kitties['getKitty'][dataKey].value;
+  }
+
+  handleSearch(evt) {
+    const drizzle = this.context.drizzle
+    const contract = drizzle.contracts.CryptoKitties
+    const query = evt.target.value
+
+    if (query.length) {
+      this.setState({
+        kittyId: query,
+        dataKey: contract.methods.getKitty.cacheCall(query)
+      })
+    }
+  }
+
+  // kittyFound() {
+  //   return this.state.kitty != undefined && this.props.drizzleStatus.initialized
+  // }
+
   render() {
-    const { drizzleStatus, accounts, kitties, initialized, web3  } = this.props;
-    // console.log(this.context.drizzle.contracts.CryptoKitties.methods.getKitty(1209787))
-    // console.log(kitties)
-    // console.log(kitties.methods.getKitty.cacheCall(1209787))
-    // console.log(this.context.drizzle.contracts['CryptoKitties'].methods.getKitty.cacheCall(1209787).value)
+    const { kittyId } = this.state
+    const kitty = this.getKitty()
 
-    // console.log(web3)
+    if (!kitty) return <div>kitty not ready</div>;
 
+    return (
+      <div>
+        <Purrtrait kittyId={kittyId} />
 
-    if (drizzleStatus.initialized) {
-      // console.log(this.renderTotalSupply())
+        <input style={{ width: 200 }} type="number" min="1" max={this.state.totalSupply}
+          value={kittyId} onChange={this.handleSearch.bind(this)}></input>
 
-      return (
-        <div>
-          <Purrtrait image="https://img.cryptokitties.co/0x06012c8cf97bead5deae237070f9587f8e7a266d/1209751.svg" />
-          {/* <span>{xtransactions.txHash.status}</span> */}
-          supply???? {this.renderTotalSupply()}
+        <p>{kitty.genes}</p>
+        <p>{kitty.generation}</p>
+        <p>{kitty.birthTime}</p>
 
-          <section>
-            <strong>Total Supply</strong>:{" "}
+        {/* {this.state.totalSupply} */}
 
-             <ContractData
-              contract="CryptoKitties"
-              method="totalSupply"
-              methodArgs={[{ from: accounts[0] }]}
-            />
-          </section>
+        {/* <span>{xtransactions.txHash.status}</span> */}
 
-          <section>
-            <strong>Kitty Info</strong>:{" 1209787 "}
+        {/* supply???? {this.renderTotalSupply().genes} */}
+
+        {/* <section>
+          <strong>Total Supply</strong>:{" "}
 
             <ContractData
-              contract="CryptoKitties"
-              method="getKitty"
-              methodArgs={[ 1209787 ]}
-            />
-          </section>
-        </div>
-      )
-    }
+            contract="CryptoKitties"
+            method="totalSupply"
+            methodArgs={[{ from: accounts[0] }]}
+          />
+        </section>
 
-    return <div>drizzle not initialized</div>
+        <section>
+          <strong>Kitty Info</strong>:{" 1209787 "}
+
+          <ContractData
+            contract="CryptoKitties"
+            method="getKitty"
+            methodArgs={[ 1209787 ]}
+          />
+        </section> */}
+      </div>
+    )
   }
 }
 

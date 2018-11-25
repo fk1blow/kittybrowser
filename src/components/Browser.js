@@ -19,7 +19,7 @@ class Browser extends Component {
 
     provider
       .enable()
-      .then(r => {
+      .then(_ => {
         const kittyContract = new web3.eth.Contract(
           KittyCoreABI,
           CONTRACT_ADDRESS,
@@ -37,19 +37,10 @@ class Browser extends Component {
 
   render() {
     if (!this.state.showHello) {
-      return <div>wait for shit to happen</div>;
+      return <div>...contract not ready</div>;
     }
 
-    return (
-      <div className="browser">
-        <h1>Kitty Browser</h1>
-        <HelloDrizzle />
-
-        {/* Input to type in the kitty ID here */}
-
-        {/* Display Kitty info here */}
-      </div>
-    );
+    return (<div className="browser"><HelloDrizzle /></div>)
   }
 }
 

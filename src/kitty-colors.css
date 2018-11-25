@@ -1,0 +1,291 @@
+.KittyBanner--bg-autumnmoon {
+    background-color: #fdf3e0;
+    --kittyColor: #fdf3e0
+}
+
+.KittyBanner--bg-babypuke {
+    background-color: #eff1e0;
+    --kittyColor: #eff1e0
+}
+
+.KittyBanner--bg-bridesmaid {
+    background-color: #ffd5e5;
+    --kittyColor: #ffd5e5
+}
+
+.KittyBanner--bg-bubblegum {
+    background-color: #fadff4;
+    --kittyColor: #fadff4
+}
+
+.KittyBanner--bg-chestnut {
+    background-color: #efe1da;
+    --kittyColor: #efe1da
+}
+
+.KittyBanner--bg-coralsunrise {
+    background-color: #fde9e4;
+    --kittyColor: #fde9e4
+}
+
+.KittyBanner--bg-cyan {
+    background-color: #c5eefa;
+    --kittyColor: #c5eefa
+}
+
+.KittyBanner--bg-dahlia {
+    background-color: #e6eafd;
+    --kittyColor: #e6eafd
+}
+
+.KittyBanner--bg-doridnudibranch {
+    background-color: #faeefa;
+    --kittyColor: #faeefa
+}
+
+.KittyBanner--bg-downbythebay {
+    background-color: #cde5d1;
+    --kittyColor: #cde5d1
+}
+
+.KittyBanner--bg-eclipse {
+    background-color: #e5e7ef;
+    --kittyColor: #e5e7ef
+}
+
+.KittyBanner--bg-isotope {
+    background-color: #effdca;
+    --kittyColor: #effdca
+}
+
+.KittyBanner--bg-forgetmenot {
+    background-color: #dcebfc;
+    --kittyColor: #dcebfc
+}
+
+.KittyBanner--bg-gold {
+    background-color: #faf4cf;
+    --kittyColor: #faf4cf
+}
+
+.KittyBanner--bg-limegreen {
+    background-color: #d9f5cb;
+    --kittyColor: #d9f5cb
+}
+
+.KittyBanner--bg-mintgreen {
+    background-color: #cdf5d4;
+    --kittyColor: #cdf5d4
+}
+
+.KittyBanner--bg-oasis {
+    background-color: #e6faf3;
+    --kittyColor: #e6faf3
+}
+
+.KittyBanner--bg-olive {
+    background-color: #ecf4e0;
+    --kittyColor: #ecf4e0
+}
+
+.KittyBanner--bg-palejade {
+    background-color: #e7f1ed;
+    --kittyColor: #e7f1ed
+}
+
+.KittyBanner--bg-parakeet {
+    background-color: #e5f3e2;
+    --kittyColor: #e5f3e2
+}
+
+.KittyBanner--bg-pinefresh {
+    background-color: #dbf0d0;
+    --kittyColor: #dbf0d0
+}
+
+.KittyBanner--bg-pumpkin {
+    background-color: #fae1ca;
+    --kittyColor: #fae1ca
+}
+
+.KittyBanner--bg-sapphire {
+    background-color: #d3e8ff;
+    --kittyColor: #d3e8ff
+}
+
+.KittyBanner--bg-sizzurp {
+    background-color: #dfdffa;
+    --kittyColor: #dfdffa
+}
+
+.KittyBanner--bg-strawberry {
+    background-color: #ffe0e5;
+    --kittyColor: #ffe0e5
+}
+
+.KittyBanner--bg-thundergrey {
+    background-color: #eee9e8;
+    --kittyColor: #eee9e8
+}
+
+.KittyBanner--bg-topaz {
+    background-color: #d1eeeb;
+    --kittyColor: #d1eeeb
+}
+
+.KittyBanner--bg-twilightsparkle {
+    background-color: #ede2f5;
+    --kittyColor: #ede2f5
+}
+
+.KittyBanner--bg-kaleidoscope {
+    -webkit-animation: kaleidoscopeBg 4s linear infinite;
+    animation: kaleidoscopeBg 4s linear infinite
+}
+
+.KittyBanner-container--shadow-kaleidoscope .KittyBanner-img-container:before {
+    background-color: rgba(0, 0, 0, .12)
+}
+
+.KittyBanner-container {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: var(--size-card);
+    margin: 0 auto;
+    border-radius: .8rem
+}
+
+.KittyBanner-container--shadow-alt-position {
+    --translate-shadow-y: 9rem
+}
+
+@media (min-width:760px) {
+    .KittyBanner-container--shadow-alt-position {
+        --translate-shadow-y: 11.6rem
+    }
+}
+
+@media (min-width:1200px) {
+    .KittyBanner-container--shadow-alt-position {
+        --translate-shadow-y: 14.2rem
+    }
+}
+
+.KittyBanner-container--shadow-autumnmoon {
+    --kitty-shadow-color: #e7d4b4
+}
+
+.KittyBanner-container--shadow-babypuke {
+    --kitty-shadow-color: #cfd4b0
+}
+
+.KittyBanner-container--shadow-bridesmaid {
+    --kitty-shadow-color: #eba3bc
+}
+
+.KittyBanner-container--shadow-bubblegum {
+    --kitty-shadow-color: #eebce3
+}
+
+.KittyBanner-container--shadow-chestnut {
+    --kitty-shadow-color: #d4beb3
+}
+
+.KittyBanner-container--shadow-coralsunrise {
+    --kitty-shadow-color: #e7c3bb
+}
+
+.KittyBanner-container--shadow-cyan {
+    --kitty-shadow-color: #83cbe0
+}
+
+.KittyBanner-container--shadow-dahlia {
+    --kitty-shadow-color: #bec5e7
+}
+
+.KittyBanner-container--shadow-doridnudibranch {
+    --kitty-shadow-color: #e1cce1
+}
+
+.KittyBanner-container--shadow-downbythebay {
+    --kitty-shadow-color: #97bc9c
+}
+
+.KittyBanner-container--shadow-eclipse {
+    --kitty-shadow-color: #cdd1e0
+}
+
+.KittyBanner-container--shadow-isotope {
+    --kitty-shadow-color: #cde793
+}
+
+.KittyBanner-container--shadow-forgetmenot {
+    --kitty-shadow-color: #a7caea
+}
+
+.KittyBanner-container--shadow-gold {
+    --kitty-shadow-color: #e3daa1
+}
+
+.KittyBanner-container--shadow-limegreen {
+    --kitty-shadow-color: #b4d9a2
+}
+
+.KittyBanner-container--shadow-mintgreen {
+    --kitty-shadow-color: #9ad7a5
+}
+
+.KittyBanner-container--shadow-oasis {
+    --kitty-shadow-color: #bee1d4
+}
+
+.KittyBanner-container--shadow-olive {
+    --kitty-shadow-color: #c8d6b4
+}
+
+.KittyBanner-container--shadow-palejade {
+    --kitty-shadow-color: #c0d1ca
+}
+
+.KittyBanner-container--shadow-parakeet {
+    --kitty-shadow-color: #bcd4b8
+}
+
+.KittyBanner-container--shadow-pinefresh {
+    --kitty-shadow-color: #adcf9b
+}
+
+.KittyBanner-container--shadow-pumpkin {
+    --kitty-shadow-color: #efc8a4
+}
+
+.KittyBanner-container--shadow-sapphire {
+    --kitty-shadow-color: #a2c2eb
+}
+
+.KittyBanner-container--shadow-sizzurp {
+    --kitty-shadow-color: #c1c1ea
+}
+
+.KittyBanner-container--shadow-strawberry {
+    --kitty-shadow-color: #efbaba
+}
+
+.KittyBanner-container--shadow-thundergrey {
+    --kitty-shadow-color: #dbccc7
+}
+
+.KittyBanner-container--shadow-topaz {
+    --kitty-shadow-color: #a8d5d1
+}
+
+.KittyBanner-container--shadow-twilightsparkle {
+    --kitty-shadow-color: #dcc7ec
+}
